@@ -11,4 +11,6 @@
   <p>There are no products to be displayed at this moment.</p>
 <% end %>
 
-<p><%= link_to "Add a new product!", new_product_path %></p>
+<% if current_user && current_user.admin %>
+  <%= link_to "Add a new product!", new_product_path %>
+<% end %>

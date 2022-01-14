@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationRecord
+
   def new
     @product = Product.find(params[:product_id])
     @review = @product.reviews.new
