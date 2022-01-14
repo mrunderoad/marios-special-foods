@@ -1,0 +1,14 @@
+<h1>Marios Specialty Foods</h1>
+<h3>Welcome to Marios Specialty Foods! We currently are offering:</h3>
+
+<% if @products.any? %>
+  <ul>
+    <% @products.each do |product| %>
+      <li><%= link_to product.name, product_path(product) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no products to be displayed at this moment.</p>
+<% end %>
+
+<p><%= link_to "Add a new product!", new_product_path %></p>
